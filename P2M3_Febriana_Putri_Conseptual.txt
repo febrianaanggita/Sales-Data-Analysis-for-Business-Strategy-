@@ -1,0 +1,31 @@
+Jawab pertanyaan berikut dengan menggunakan kalimat Anda sendiri:
+
+1. Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui !
+Jawaban: NoSQL singkatan dari Not Only SQL, yang dimana dia ini sebuah database yang menggunakan sebuah model tabel seperti database relasional biasanya. Dan data ini bisa di simpan 
+dalam bentuk dokumen, key-value, graph, ataupun colom store. yang dimana dia lebih fleksibel kerena bisa menampung data yang strukturnya tidak rapi atau bisa juga berubah ubah.
+
+2. Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System !
+Jawaban: 
+- jika memiliki data yang rapi, terstruktur dan memiliki suatu hubungan antar tabel nya, itu bisa menggunakan RDBMS seperti MySQL, dan PostgreSQL.
+- jika datanya besar ukurannya, bentuknya juga tidak menentu dan membutuhkan skalabilitas yang tinggi, atau sering berubah strukturnya itu bisa menggunakan NoSQL contohnya MongoDB & Cassandra
+
+3. Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut !
+Jawaban: 
+- MongoDB : modelnya document-base gampang banget unutk disimpan dalam file JSON, Fleksibel dan juga cocok unutk membuat aplikasi yang struktur nya bisa berubah ubah
+- Cassandra : modelnya column-based, kuat banget kalau datanya super besar dan butuh kecepatan tinggi. Biasanya digunakan di sistem yang harus jalan terus tanpa downtime.
+
+4. Jelaskan apa yang Anda ketahui dari Airflow menggunakan pemahaman dan bahasa Anda sendiri !
+Jawaban: Airflow itu seperti “orchestrator” buat workflow data. Jadi kalau kita punya proses panjang (misalnya ambil data → bersihin → simpan ke database → kirim ke dashboard), 
+semuanya bisa diatur step by step di Airflow. Kita bisa bikin alur kerja itu dalam bentuk DAG (Directed Acyclic Graph), gampang dimonitor, bisa dijadwalin, dan kalau ada error bisa ketahuan di mana.
+
+5. Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri !
+Jawaban: Great Expectations (GE) yaitu tool buat ngecek kualitas data. Jadi sebelum digunakan buat analisis, datanya divalidasi dulu sesuai aturan yang kita tentuin 
+(misalnya kolom tanggal harus isi, angka profit nggak boleh minus, dsb). Kalau ada data yang aneh, langsung ketahuan. 
+Intinya biar data yang digunakan tuh bener-bener “bersih” dan sesuai standar.
+
+6. Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+Jawaban: Batch Processing itu cara ngolah data dalam jumlah besar tapi tidak real-time, melainkan diproses per “batch” (sekumpulan data). Misalnya, tiap malam semua transaksi hari ini diproses bareng-bareng.
+
+- Contoh kasus: generate laporan bulanan, proses payroll (gaji karyawan), atau rekap penjualan harian.
+- Tools: Hadoop, Spark, bahkan Airflow bisa dipakai buat ngatur batch processing.
+Kelebihannya, efisien buat data besar dan bisa jalan otomatis. Kekurangannya, ya nggak real-time (jadi kalau butuh data langsung, agak telat).

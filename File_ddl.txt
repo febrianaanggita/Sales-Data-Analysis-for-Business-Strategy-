@@ -1,0 +1,51 @@
+===========================================
+PREFACE
+===========================================
+This program is aims to create tables and insert the dataset into a PostgreSQL database.
+
+
+===========================================
+URL DATASET
+===========================================
+Dataset URL: https://www.kaggle.com/datasets/shantanugarg274/sales-dataset
+
+===========================================
+Data Definition Language Syntax
+===========================================
+Defines the structure of the `table_m3`, specifying columns, data types, and constraints using `CREATE TABLE`.
+
+-- Membuat tabel
+DROP TABLE IF EXISTS table_m3;
+
+CREATE TABLE table_m3 (
+    order_id VARCHAR(50),
+    amount NUMERIC(10,2),
+    profit NUMERIC(10,2),
+    quantity INT,
+    category VARCHAR(100),
+    sub_category VARCHAR(100),
+    payment_mode VARCHAR(50),
+    order_date DATE,
+    customer_name VARCHAR(100),
+    state VARCHAR(100),
+    city VARCHAR(100),
+    year_month VARCHAR(10)
+);
+
+===========================================
+Data Manipulation Language Syntax
+===========================================
+Inserts data from a CSV file into the `table_m3` using `COPY`.
+
+-- Load data dari CSV
+COPY table_m3(
+    order_id, amount, profit, quantity, category, sub_category,
+    payment_mode, order_date, customer_name, state, city, year_month
+)
+FROM '/tmp/M3P2_Febriana_Putri_raw.csv'
+WITH (
+    FORMAT csv,
+    HEADER true,
+    DELIMITER ','
+);
+
